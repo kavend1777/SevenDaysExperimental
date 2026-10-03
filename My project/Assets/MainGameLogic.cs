@@ -26,6 +26,9 @@ public class MainGameLogic : MonoBehaviour
     public static bool CurrentCellSelectionForBattle = false;
     public static int CurrentCellSelectionForBattleFirstSelected = -1;
     
+    public GlobalSettings GS => GlobalSettings.Instance;
+    public int currentChatTopicCount=0;
+    
     [System.Serializable]
     public class NpcRelations
     {
@@ -54,7 +57,7 @@ public class MainGameLogic : MonoBehaviour
         public int lvl=0;
         public int exp=0;
         public int credit=0;
-        [Tooltip("0-无  金木水火土-12345")]
+        [Tooltip("0-无  金木土水火-12345")]
         public int attribute = 0;
         [Tooltip("0-最健康")]
         public int health = 0;
@@ -108,9 +111,9 @@ public class MainGameLogic : MonoBehaviour
     public TextMeshProUGUI BattleTextNpc2;
     public TextMeshProUGUI BattleTextDetail;
     [TextArea(3, 10)] public string BattleTextDetailTextPrefix;
-    
-    
-    
+
+
+    private List<bool> CurrentDayTalkedCell = new List<bool>{false,false,false};
     public string dayText = "  DAY: {0}";
     void Start()
     {
@@ -232,7 +235,7 @@ public class MainGameLogic : MonoBehaviour
             
             
         }
-        if (pResource.chatTimes == 0)
+        if (pResource.chatTimes == 0 || CurrentDayTalkedCell[index] == true)
         {
             if (chatBtn != null)
                 chatBtn.interactable = false;
@@ -241,7 +244,10 @@ public class MainGameLogic : MonoBehaviour
         {
             if (chatBtn != null)
                 chatBtn.interactable = true;
+            InitCurrentChatTopicCount();
+            DialogueManager.ShowAlert($"你有 {currentChatTopicCount} 次对话次数.");
         }
+        
     }
 
     public string GetNpcNameByIndex(int index)
@@ -270,6 +276,11 @@ public class MainGameLogic : MonoBehaviour
         }
     }
 
+    public void InitCurrentChatTopicCount()
+    {
+        currentChatTopicCount = GS.chatTopicCount;
+    }
+
     public void UpdatePlayerResourceText()
     {
         pResTMP.SetText(string.Format("玩家资源:\n  药物: {0}\n  食物: {1}\n  私聊次数: {2}\n  禁闭权: {3}"
@@ -283,6 +294,10 @@ public class MainGameLogic : MonoBehaviour
         pResource.medicineCount = PlayerResource.MaxMedicineCount;
         pResource.lockUpTimes = PlayerResource.MaxLockUpCount;
         UpdatePlayerResourceText();
+        for (int i = 0; i < CurrentDayTalkedCell.Count; i++)
+        {
+            CurrentDayTalkedCell[i] = false;
+        }
     }
     
     public void QuitToTitle()
@@ -424,9 +439,16 @@ public class MainGameLogic : MonoBehaviour
 
     public void DialogActed(Button calledButton)
     {
-        pResource.chatTimes -= 1;
+        if (!CurrentDayTalkedCell[CurrentLookAtCell])
+        {
+            pResource.chatTimes -= 1;
+            CurrentDayTalkedCell[CurrentLookAtCell] = true;
+        }
+
+        currentChatTopicCount -= 1;
+        DialogueManager.ShowAlert($"当前对话剩余次数:{currentChatTopicCount}");
         UpdatePlayerResourceText();
-        if (pResource.chatTimes == 0)
+        if (pResource.chatTimes == 0 || currentChatTopicCount == 0)
         {
             calledButton.interactable = false;
         }

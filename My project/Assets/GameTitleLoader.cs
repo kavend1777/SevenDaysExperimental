@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using DG.Tweening.Plugins.Core.PathCore;
 using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
+using Path = DG.Tweening.Plugins.Core.PathCore.Path;
 
 public class GameTitleLoader : MonoBehaviour
 {
@@ -40,8 +43,8 @@ public class GameTitleLoader : MonoBehaviour
 
     public void LoadGame()
     {
-
-        if (SaveSystem.HasSavedGameInSlot(0))
+        bool fileE = File.Exists(Application.persistentDataPath + "/NpcRelations.json");
+        if (SaveSystem.HasSavedGameInSlot(0) &&fileE)
         {
             SavedGameData d = SaveSystem.storer.RetrieveSavedGameData(0);
             string k = "ds";

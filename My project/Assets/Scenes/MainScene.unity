@@ -9203,7 +9203,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913341595}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -9320,6 +9320,7 @@ MonoBehaviour:
           m_StringArgument: "\u9009\u4E8E\u6218\u6597"
           m_BoolArgument: 1
         m_CallState: 2
+  currentChatTopicCount: 0
   ReturnToTitle:
     m_PersistentCalls:
       m_Calls: []
@@ -9550,7 +9551,7 @@ GameObject:
   - component: {fileID: 1952788330}
   - component: {fileID: 1952788333}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonChat
   m_TagString: ChatButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

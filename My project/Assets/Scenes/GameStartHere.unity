@@ -793,6 +793,129 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712456220}
   m_CullTransparentMesh: 1
+--- !u!1 &1091964492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091964494}
+  - component: {fileID: 1091964493}
+  m_Layer: 0
+  m_Name: "--- \u5168\u5C40\u8BBE\u7F6E ---"
+  m_TagString: Untagged
+  m_Icon: {fileID: 8228938214290033325, guid: 60da22905c8d3ea49bab6610351789de, type: 3}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1091964493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091964492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e67d4d2dea31af47aa7e3054f1b8906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerRange: {x: 0, y: 3}
+  healthRange:
+  - "\u5065\u5EB7"
+  - "\u8F7B\u4F24"
+  - "\u91CD\u4F24"
+  - "\u604D\u60DA"
+  attributes:
+  - "\u65E0"
+  - "\u91D1"
+  - "\u6728"
+  - "\u571F"
+  - "\u6C34"
+  - "\u706B"
+  advantageAttributeMultiplier: 1.2
+  disadvantageAttributeMultiplier: 0.8
+  chatTopicCount: 3
+  npcStatuses:
+  - npcName: Npc1
+    lvl: 0
+    exp: 0
+    credit: 0
+    attribute: 0
+    health: 0
+    baseBattlePower: 100
+    hunger: 3
+    continuousWinTimes: 0
+    continuousLossTimes: 0
+    npcRelations:
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+  - npcName: Npc2
+    lvl: 0
+    exp: 0
+    credit: 0
+    attribute: 0
+    health: 0
+    baseBattlePower: 100
+    hunger: 3
+    continuousWinTimes: 0
+    continuousLossTimes: 0
+    npcRelations:
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+  - npcName: Npc3
+    lvl: 0
+    exp: 0
+    credit: 0
+    attribute: 0
+    health: 0
+    baseBattlePower: 100
+    hunger: 3
+    continuousWinTimes: 0
+    continuousLossTimes: 0
+    npcRelations:
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+    - relationValue: 0
+      trustValue: 0
+      horrorValue: 0
+  newDayLua: 
+  luaExecuteOnGameStart: GameAPI:PrintMessage("Lua Script Loaded!")
+--- !u!4 &1091964494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091964492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 880.25494, y: 593.6356, z: 4.532934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1244919500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,3 +1476,4 @@ SceneRoots:
   - {fileID: 540160647}
   - {fileID: 44730973}
   - {fileID: 275725880}
+  - {fileID: 1091964494}
