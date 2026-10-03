@@ -6389,14 +6389,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1952788333}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
+      - m_Target: {fileID: 1952788334}
+        m_TargetAssemblyTypeName: StartCorrespondConversation, Assembly-CSharp
+        m_MethodName: StartCurrentNpcConversation
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1130863809}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1944771137}
+        m_TargetAssemblyTypeName: MainGameLogic, Assembly-CSharp
+        m_MethodName: DialogActed
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1952788330}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9203,7 +9214,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913341595}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -9235,6 +9246,7 @@ GameObject:
   - component: {fileID: 1944771137}
   - component: {fileID: 1944771138}
   - component: {fileID: 1944771139}
+  - component: {fileID: 1944771140}
   m_Layer: 0
   m_Name: MainGameLogic
   m_TagString: Untagged
@@ -9271,13 +9283,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnFoodGiven:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952788334}
+        m_TargetAssemblyTypeName: StartCorrespondConversation, Assembly-CSharp
+        m_MethodName: StartCurrentNpcConversation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1130863809}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMedicineGiven:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952788334}
+        m_TargetAssemblyTypeName: StartCorrespondConversation, Assembly-CSharp
+        m_MethodName: StartCurrentNpcConversation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1130863809}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnNpcLockup:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1952788334}
+        m_TargetAssemblyTypeName: StartCorrespondConversation, Assembly-CSharp
+        m_MethodName: StartCurrentNpcConversation
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1130863809}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCellSelectForBattleFirstSelected:
     m_PersistentCalls:
       m_Calls:
@@ -9336,67 +9384,7 @@ MonoBehaviour:
   ReturnToTitle:
     m_PersistentCalls:
       m_Calls: []
-  npcStatuses:
-  - npcName: Npc1
-    lvl: 0
-    exp: 0
-    credit: 0
-    attribute: 0
-    health: 0
-    baseBattlePower: 100
-    hunger: 3
-    continuousWinTimes: 0
-    continuousLossTimes: 0
-    npcRelations:
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-  - npcName: Npc2
-    lvl: 0
-    exp: 0
-    credit: 0
-    attribute: 0
-    health: 0
-    baseBattlePower: 100
-    hunger: 3
-    continuousWinTimes: 0
-    continuousLossTimes: 0
-    npcRelations:
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-  - npcName: Npc3
-    lvl: 0
-    exp: 0
-    credit: 0
-    attribute: 0
-    health: 0
-    baseBattlePower: 100
-    hunger: 3
-    continuousWinTimes: 0
-    continuousLossTimes: 0
-    npcRelations:
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
-    - relationValue: 0
-      trustValue: 0
-      horrorValue: 0
+  npcStatuses: []
   pResource:
     medicineCount: 0
     foodCount: 0
@@ -9549,6 +9537,86 @@ MonoBehaviour:
   onSceneLoad:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1944771140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944771135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 32
+  delayOneFrame: 0
+  condition:
+    luaConditions: []
+    questConditions: []
+    acceptedTags: []
+    acceptedGameObjects: []
+    luaWizardIndex: -1
+    lastEvaluationValue: 0
+  setQuestState: 1
+  questName: 
+  questState: 0
+  setQuestEntryState: 0
+  questEntryNumber: 1
+  questEntryState: 0
+  setAnotherQuestEntryState: 0
+  anotherQuestEntryNumber: 1
+  anotherQuestEntryState: 0
+  luaCode: 
+  sequence: 
+  sequenceSpeaker: {fileID: 0}
+  sequenceListener: {fileID: 0}
+  waitOneFrameOnStartOrEnable: 1
+  alertMessage: 
+  textTable: {fileID: 0}
+  alertDuration: 0
+  sendMessages: []
+  barkSource: 0
+  barkConversation: 
+  barkEntryID: -1
+  barkEntryTitle: 
+  barkText: 
+  barkTextSequence: 
+  barker: {fileID: 0}
+  barkTarget: {fileID: 0}
+  barkOrder: 0
+  allowBarksDuringConversations: 0
+  skipBarkIfNoValidEntries: 0
+  cacheBarkLines: 0
+  conversation: "NPC1\u6CBB\u7597"
+  conversationConversant: {fileID: 0}
+  conversationActor: {fileID: 0}
+  startConversationEntryID: -1
+  startConversationEntryTitle: 
+  overrideDialogueUI: {fileID: 0}
+  additionalActorOverrides: []
+  exclusive: 0
+  replace: 0
+  queue: 0
+  skipIfNoValidEntries: 0
+  preventRestartOnSameFrameEnded: 0
+  stopConversationOnTriggerExit: 0
+  marginToAllowTriggerExit: 0.2
+  stopConversationIfTooFar: 0
+  maxConversationDistance: 5
+  monitorConversationDistanceFrequency: 1
+  showCursorDuringConversation: 0
+  pauseGameDuringConversation: 0
+  setActiveActions: []
+  setEnabledActions: []
+  setAnimatorStateActions: []
+  onExecute:
+    m_PersistentCalls:
+      m_Calls: []
+  useConversationTitlePicker: 1
+  useBarkTitlePicker: 1
+  useQuestNamePicker: 1
+  selectedDatabase: {fileID: 11400000, guid: 6ac87a5a3cb9dc84b88b7e99e8f76ba2, type: 2}
 --- !u!1 &1952788328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9562,6 +9630,7 @@ GameObject:
   - component: {fileID: 1952788331}
   - component: {fileID: 1952788330}
   - component: {fileID: 1952788333}
+  - component: {fileID: 1952788334}
   m_Layer: 5
   m_Name: ButtonChat
   m_TagString: ChatButton
@@ -9633,14 +9702,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1952788333}
-        m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-          Assembly-CSharp-firstpass
-        m_MethodName: OnUse
-        m_Mode: 1
+      - m_Target: {fileID: 1952788334}
+        m_TargetAssemblyTypeName: StartCorrespondConversation, Assembly-CSharp
+        m_MethodName: StartCurrentNpcConversation
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1130863809}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9776,6 +9844,18 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: 6ac87a5a3cb9dc84b88b7e99e8f76ba2, type: 2}
+--- !u!114 &1952788334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952788328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8544bca5d4550a1429f6dcd4b54bfb50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1964583932
 GameObject:
   m_ObjectHideFlags: 0

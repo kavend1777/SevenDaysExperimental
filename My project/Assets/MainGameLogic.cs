@@ -346,6 +346,7 @@ public class MainGameLogic : MonoBehaviour
     public void GiveFood()
     {
         pResource.foodCount -= 1;
+        DialogueLua.SetVariable($"{npcStatuses[CurrentLookAtCell].npcName}被给予食物",true);
         OnFoodGiven?.Invoke();
         
         npcStatuses[CurrentLookAtCell].hunger += 1;
@@ -359,7 +360,11 @@ public class MainGameLogic : MonoBehaviour
     public void GiveMedicine()
     {
         pResource.medicineCount -= 1;
+        DialogueLua.SetVariable($"{npcStatuses[CurrentLookAtCell].npcName}被治疗",true);
         OnMedicineGiven?.Invoke();
+        
+        
+        
         npcStatuses[CurrentLookAtCell].health -= 1;
         DialogueManager.ShowAlert("已给予1份药物");
         var go = GameObject.FindGameObjectWithTag("ExecutePanel");
@@ -372,6 +377,7 @@ public class MainGameLogic : MonoBehaviour
     public void LockUpNpc()
     {
         pResource.lockUpTimes -= 1;
+        DialogueLua.SetVariable($"{npcStatuses[CurrentLookAtCell].npcName}被关禁闭",true);
         OnNpcLockup?.Invoke();
         
         DialogueManager.ShowAlert("关禁闭中");

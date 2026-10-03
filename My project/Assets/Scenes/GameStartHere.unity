@@ -847,7 +847,7 @@ MonoBehaviour:
   initFoodCount: 2
   initChatCount: 2
   npcInitStatuses:
-  - npcName: Npc1
+  - npcName: "\u795E\u7236"
     lvl: 0
     exp: 0
     credit: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
     - relationValue: 0
       trustValue: 0
       horrorValue: 0
-  - npcName: Npc2
+  - npcName: "\u519B\u4EBA"
     lvl: 0
     exp: 0
     credit: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
     - relationValue: 0
       trustValue: 0
       horrorValue: 0
-  - npcName: Npc3
+  - npcName: "\u5C0F\u826F"
     lvl: 0
     exp: 0
     credit: 0
