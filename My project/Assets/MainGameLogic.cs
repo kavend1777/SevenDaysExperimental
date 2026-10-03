@@ -430,10 +430,14 @@ public class MainGameLogic : MonoBehaviour
     
     public float GetNpcFinalBattlePower(NpcStatus npcStatus)
     {
-        //TODO
+        
         GlobalSettings.LuaScript.Globals["npcBaseBattlePower"]=npcStatus.baseBattlePower;
         GlobalSettings.LuaScript.Globals["npcLvl"] = npcStatus.lvl;
+        GlobalSettings.LuaScript.Globals["advantageAttributeMultiplier"] = GS.advantageAttributeMultiplier;
+        GlobalSettings.LuaScript.Globals["disadvantageAttributeMultiplier"] = GS.disadvantageAttributeMultiplier;
 
+        
+        
         DynValue result = GlobalSettings.LuaScript.DoString(GS.npcFinalBattlePowerLua);
         if (result.Type == DataType.Number)
         {

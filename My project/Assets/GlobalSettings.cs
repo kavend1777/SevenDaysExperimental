@@ -18,9 +18,9 @@ public class GlobalSettings : MonoBehaviour
     public List<string> attributes = new List<string> {"无","金","木","土","水","火"};
     
     [Header("战斗数据")]
-    [Header("\t克制乘数  战斗中A克制B时，A的最终战力 = 战力x克制乘数")]
+    [Header("\t克制乘数")]
     public float advantageAttributeMultiplier = 1.2f;
-    [Header("\t不利乘数  战斗中B克制A时，A的最终战力 = 战力x不利乘数")]
+    [Header("\t不利乘数")]
     public float disadvantageAttributeMultiplier = 0.8f;
     [Header("\tNPC最终战力计算描述")]
     [TextArea(3,5)] public string npcFinalBattlePowerCalculationDescription;
@@ -53,7 +53,7 @@ public class GlobalSettings : MonoBehaviour
     public List<MainGameLogic.NpcStatus> npcInitStatuses = new List<MainGameLogic.NpcStatus>();
 
     [Header("除了第一天在开始时给予一次 其余 每日结束后在第二天开始时的游戏内情况")] 
-    [Header("\t示例方法\n\tSetFoodCount(3) -> 将玩家的食物数量设为3")]
+    [Header("\t变量\n\tpChatCount:对话次数\t\t|pMaxChatCount:最多对话次数\n\tpMedicineCount:药物数量\t|pMaxMedicineCount:最多药物数量\n\tpFoodCount:食物数量\t\t|pMaxFoodCount:最多食物数量")]
     [TextArea(5,15)]
     public string newDayLua;
 
