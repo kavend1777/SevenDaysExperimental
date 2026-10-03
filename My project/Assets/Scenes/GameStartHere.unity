@@ -837,6 +837,8 @@ MonoBehaviour:
   - "\u706B"
   advantageAttributeMultiplier: 1.2
   disadvantageAttributeMultiplier: 0.8
+  npcFinalBattlePowerCalculationDescription: "\u6700\u7EC8\u6218\u529B=\u57FA\u7840\u6218\u529Bx(1+\u7B49\u7EA7*0.1)"
+  npcFinalBattlePowerLua: return npcBaseBattlePower*(1+npcLvl*0.1)
   chatTopicCount: 3
   npcStatuses:
   - npcName: Npc1

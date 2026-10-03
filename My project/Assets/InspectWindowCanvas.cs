@@ -52,10 +52,10 @@ public class InspectWindowCanvas : MonoBehaviour
     public void UpdateInfo(MainGameLogic.NpcStatus nS)
     {
         statusText.text = string.Format("角色: {0}\n等级: {1}\n经验值: {2}\n积分: {3}\n属性: {4}\n健康状态: {5}\n饥饿值: {6}\n连胜数: {7}\n连败数: {8}\n---------"
-            , nS.npcName,nS.lvl,nS.exp,nS.credit,MainGameLogic.NpcStatus.AttributeRange[nS.attribute],MainGameLogic.NpcStatus.HealthRange[nS.health],nS.hunger,nS.continuousWinTimes,nS.continuousLossTimes);
+            , nS.npcName,nS.lvl,nS.exp,nS.credit,GS().attributes[nS.attribute],GS().healthRange[nS.health],nS.hunger,nS.continuousWinTimes,nS.continuousLossTimes);
         UpdateRelations(nS);
     }
-
+    public GlobalSettings GS(){return GlobalSettings.Instance;}
     public void UpdateRelations(MainGameLogic.NpcStatus nS)
     {
         var g = MainGameLogic.Instance.npcStatuses;
