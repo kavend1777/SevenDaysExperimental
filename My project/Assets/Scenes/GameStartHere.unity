@@ -839,8 +839,14 @@ MonoBehaviour:
   disadvantageAttributeMultiplier: 0.8
   npcFinalBattlePowerCalculationDescription: "\u6700\u7EC8\u6218\u529B=\u57FA\u7840\u6218\u529Bx(1+\u7B49\u7EA7*0.1)"
   npcFinalBattlePowerLua: return npcBaseBattlePower*(1+npcLvl*0.1)
-  chatTopicCount: 3
-  npcStatuses:
+  chatTopicCount: 2
+  maxMedicineCount: 2
+  maxFoodCount: 2
+  maxChatCount: 2
+  initMedicineCount: 2
+  initFoodCount: 2
+  initChatCount: 2
+  npcInitStatuses:
   - npcName: Npc1
     lvl: 0
     exp: 0
@@ -901,7 +907,15 @@ MonoBehaviour:
     - relationValue: 0
       trustValue: 0
       horrorValue: 0
-  newDayLua: 
+  newDayLua: 'pChatCount = pMaxChatCount
+
+    pFoodCount = pMaxFoodCount
+
+    pMedicineCount
+    = pMaxMedicineCount
+
+
+'
   luaExecuteOnGameStart: GameAPI:PrintMessage("Lua Script Loaded!")
 --- !u!4 &1091964494
 Transform:
